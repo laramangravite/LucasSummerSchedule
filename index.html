@@ -34,10 +34,8 @@
   .tabs { display: flex; gap: 8px; margin-bottom: 1.5rem; flex-wrap: wrap; }
   .tab { padding: 6px 16px; border: 0.5px solid var(--border2); border-radius: var(--radius-sm); font-size: 13px; cursor: pointer; background: var(--bg); color: var(--text2); transition: all 0.15s; }
   .tab.active { background: var(--bg3); color: var(--text); font-weight: 500; }
-  .tab-panel { display: none; }
-  .tab-panel.active { display: block; }
+  .tab-panel { display: none; } .tab-panel.active { display: block; }
 
-  /* weekly view */
   .legend { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 1.25rem; }
   .leg { display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--text2); }
   .leg-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
@@ -47,19 +45,13 @@
   .blk { padding: 7px 9px; font-size: 11px; line-height: 1.35; border-bottom: 0.5px solid var(--border); }
   .blk:last-child { border-bottom: none; }
   .blk-lbl { font-weight: 600; font-size: 9px; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 2px; }
-  .b-anchor { background: var(--teal-light); color: var(--teal-dark); }
-  .b-anchor .blk-lbl { color: var(--teal); }
-  .b-work { background: var(--amber-light); color: var(--amber-dark); }
-  .b-work .blk-lbl { color: var(--amber); }
-  .b-learn { background: var(--purple-light); color: var(--purple-dark); }
-  .b-learn .blk-lbl { color: var(--purple); }
-  .b-screen { background: var(--coral-light); color: var(--coral-dark); }
-  .b-screen .blk-lbl { color: var(--coral); }
-  .b-noscreen { background: var(--bg3); color: var(--text3); }
-  .b-noscreen .blk-lbl { color: var(--text3); }
-  .note { font-size: 11px; color: var(--text3); margin-top: 6px; }
+  .b-anchor { background: var(--teal-light); color: var(--teal-dark); } .b-anchor .blk-lbl { color: var(--teal); }
+  .b-work   { background: var(--amber-light); color: var(--amber-dark); } .b-work .blk-lbl { color: var(--amber); }
+  .b-learn  { background: var(--purple-light); color: var(--purple-dark); } .b-learn .blk-lbl { color: var(--purple); }
+  .b-screen { background: var(--coral-light); color: var(--coral-dark); } .b-screen .blk-lbl { color: var(--coral); }
+  .b-noscreen { background: var(--bg3); color: var(--text3); } .b-noscreen .blk-lbl { color: var(--text3); }
+  .page-note { font-size: 11px; color: var(--text3); margin-top: 6px; }
 
-  /* checklist */
   .date-banner { background: var(--teal-light); color: var(--teal-dark); border-radius: var(--radius-sm); padding: 8px 14px; font-size: 13px; font-weight: 500; margin-bottom: 1rem; display: flex; align-items: center; gap: 8px; }
   .day-sel { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 1rem; }
   .day-btn { padding: 5px 14px; border: 0.5px solid var(--border2); border-radius: var(--radius-sm); font-size: 12px; cursor: pointer; background: var(--bg); color: var(--text2); }
@@ -68,11 +60,10 @@
   .prog-bar { background: var(--bg3); border-radius: 20px; height: 6px; margin-bottom: 1.25rem; overflow: hidden; }
   .prog-fill { height: 100%; background: var(--teal); border-radius: 20px; transition: width 0.3s; }
 
-  /* cards */
   .card { background: var(--bg); border: 0.5px solid var(--border); border-radius: var(--radius); overflow: hidden; margin-bottom: 1rem; }
   .c-row { display: flex; align-items: flex-start; gap: 12px; padding: 12px 14px; border-bottom: 0.5px solid var(--border); }
   .c-row:last-child { border-bottom: none; }
-  .c-row-top { display: flex; align-items: center; gap: 12px; cursor: pointer; }
+  .c-row-top { display: flex; align-items: center; gap: 12px; cursor: pointer; width: 100%; }
   .c-row-top:hover { opacity: 0.85; }
   .c-box { width: 18px; height: 18px; border: 0.5px solid var(--border2); border-radius: 4px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
   .c-box.on { background: var(--teal); border-color: var(--teal-dark); }
@@ -80,11 +71,18 @@
   .c-lbl.done { text-decoration: line-through; color: var(--text3); }
   .c-tag { font-size: 10px; padding: 2px 8px; border-radius: 20px; font-weight: 500; white-space: nowrap; }
   .tag-daily { background: var(--teal-light); color: var(--teal); }
-  .c-notes { margin-top: 8px; width: 100%; }
-  .c-notes textarea { width: 100%; font-size: 12px; padding: 7px 10px; border: 0.5px solid var(--border2); border-radius: var(--radius-sm); background: var(--bg2); color: var(--text); resize: none; font-family: inherit; line-height: 1.5; outline: none; min-height: 56px; }
-  .c-notes textarea:focus { border-color: var(--teal); background: var(--bg); }
-  .c-notes-save { display: flex; justify-content: flex-end; margin-top: 5px; gap: 8px; align-items: center; }
+
+  /* multi-select activity picker */
+  .activity-picker { margin-top: 8px; width: 100%; }
+  .activity-picker-label { font-size: 11px; color: var(--text3); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.04em; font-weight: 500; }
+  .activity-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+  .chip { padding: 5px 12px; border-radius: 20px; font-size: 12px; cursor: pointer; border: 0.5px solid var(--border2); background: var(--bg2); color: var(--text2); transition: all 0.15s; user-select: none; }
+  .chip:hover { border-color: var(--teal); color: var(--text); }
+  .chip.selected-hw  { background: var(--amber-light); border-color: var(--amber); color: var(--amber-dark); font-weight: 500; }
+  .chip.selected-learn { background: var(--purple-light); border-color: var(--purple); color: var(--purple-dark); font-weight: 500; }
+  .activity-save-row { display: flex; justify-content: flex-end; align-items: center; gap: 8px; margin-top: 8px; }
   .save-hint { font-size: 11px; color: var(--text3); }
+
   .cat-hd { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text3); padding: 8px 14px 5px; border-bottom: 0.5px solid var(--border); background: var(--bg2); }
   .add-row { display: flex; gap: 8px; margin-bottom: 10px; }
   .add-row input { flex: 1; padding: 8px 12px; border: 0.5px solid var(--border2); border-radius: var(--radius-sm); font-size: 13px; background: var(--bg); color: var(--text); outline: none; }
@@ -94,12 +92,11 @@
   .btn-sm { padding: 4px 10px; font-size: 12px; }
   .btn-primary { background: var(--teal); color: #fff; border-color: var(--teal-dark); }
   .btn-primary:hover { background: #0F6E56; }
-  .trash { font-size: 13px; color: var(--text3); cursor: pointer; padding: 4px; line-height: 1; }
+  .trash { font-size: 13px; color: var(--text3); cursor: pointer; padding: 4px; }
   .trash:hover { color: var(--coral); }
   .extra-badge { font-size: 10px; padding: 2px 7px; border-radius: 20px; background: var(--amber-light); color: var(--amber); font-weight: 500; white-space: nowrap; margin-left: 4px; }
   .status { font-size: 12px; color: var(--text3); min-height: 20px; margin-bottom: 6px; }
-  .status.ok { color: var(--teal); }
-  .status.err { color: var(--coral); }
+  .status.ok { color: var(--teal); } .status.err { color: var(--coral); }
   .spinner { display: inline-block; width: 11px; height: 11px; border: 2px solid var(--border2); border-top-color: var(--teal); border-radius: 50%; animation: spin 0.7s linear infinite; vertical-align: middle; margin-right: 4px; }
   @keyframes spin { to { transform: rotate(360deg); } }
   .section-desc { font-size: 13px; color: var(--text2); margin-bottom: 1rem; }
@@ -109,21 +106,79 @@
   .setup-box code { background: var(--bg3); padding: 1px 6px; border-radius: 4px; font-size: 12px; color: var(--text); font-family: monospace; }
   hr { border: none; border-top: 0.5px solid var(--border); margin: 1.25rem 0; }
   .empty { font-size: 13px; color: var(--text3); padding: 14px; }
-  .check-svg { display: none; }
-  .c-box.on .check-svg { display: block; }
+  .check-svg { display: none; } .c-box.on .check-svg { display: block; }
+
+  /* tracker */
+  .pct-chart-card { background: var(--bg); border: 0.5px solid var(--border); border-radius: var(--radius); padding: 1.25rem 1.25rem 1rem; margin-bottom: 1rem; }
+  .pct-chart-title { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text3); margin-bottom: 1rem; }
+  .pct-chart { display: flex; align-items: flex-end; gap: 6px; height: 100px; }
+  .pct-bar-col { display: flex; flex-direction: column; align-items: center; gap: 4px; flex: 1; min-width: 0; }
+  .pct-bar-wrap { width: 100%; display: flex; align-items: flex-end; justify-content: center; height: 80px; }
+  .pct-bar { width: 100%; border-radius: 4px 4px 0 0; transition: height 0.3s; min-height: 3px; position: relative; cursor: default; }
+  .pct-bar:hover::after { content: attr(data-tip); position: absolute; bottom: calc(100% + 4px); left: 50%; transform: translateX(-50%); background: var(--text); color: var(--bg); font-size: 11px; padding: 3px 7px; border-radius: 4px; white-space: nowrap; pointer-events: none; z-index: 10; }
+  .pct-bar-label { font-size: 9px; color: var(--text3); text-align: center; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; width: 100%; }
+  .pct-bar-pct { font-size: 10px; font-weight: 600; color: var(--text2); text-align: center; }
+  .pct-no-data { font-size: 13px; color: var(--text3); text-align: center; padding: 2rem 0; }
+  .reward-banner { border-radius: var(--radius); padding: 1rem 1.25rem; margin-bottom: 1rem; display: flex; align-items: center; gap: 12px; border: 1.5px solid; }
+  .reward-banner.bronze { background:#FDF3E3; border-color:#C47B1A; color:#7A4A0A; }
+  .reward-banner.silver { background:#F2F4F7; border-color:#8A96A8; color:#3A4558; }
+  .reward-banner.gold   { background:#FFFBEA; border-color:#D4A017; color:#7A5A00; }
+  .reward-banner.legend { background:var(--purple-light); border-color:var(--purple); color:var(--purple-dark); }
+  .reward-icon { font-size: 28px; flex-shrink: 0; }
+  .reward-title { font-size: 14px; font-weight: 600; }
+  .reward-desc { font-size: 12px; opacity: 0.8; margin-top: 2px; }
+  .tally-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 1.5rem; }
+  @media(max-width:520px){ .tally-grid { grid-template-columns: 1fr; } }
+  .tally-section { background: var(--bg); border: 0.5px solid var(--border); border-radius: var(--radius); overflow: hidden; }
+  .tally-header { padding: 10px 14px; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text3); border-bottom: 0.5px solid var(--border); background: var(--bg2); }
+  .tally-row { display: flex; align-items: center; gap: 10px; padding: 8px 14px; border-bottom: 0.5px solid var(--border); }
+  .tally-row:last-child { border-bottom: none; }
+  .tally-name { font-size: 13px; flex: 1; }
+  .tally-count { font-size: 13px; font-weight: 600; white-space: nowrap; }
+  .tally-bar-wrap { width: 60px; height: 6px; background: var(--bg3); border-radius: 10px; overflow: hidden; flex-shrink: 0; }
+  .tally-bar { height: 100%; border-radius: 10px; }
+  .tally-empty { font-size: 13px; color: var(--text3); padding: 12px 14px; }
+  .tracker-section-title { font-size: 13px; font-weight: 600; color: var(--text2); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 10px; margin-top: 1.5rem; }
+  .week-block { background: var(--bg); border: 0.5px solid var(--border); border-radius: var(--radius); overflow: hidden; margin-bottom: 10px; }
+  .week-block-header { display: flex; align-items: center; justify-content: space-between; padding: 10px 14px; border-bottom: 0.5px solid var(--border); cursor: pointer; user-select: none; }
+  .week-block-header:hover { background: var(--bg2); }
+  .week-block-left { display: flex; align-items: center; gap: 10px; flex: 1; flex-wrap: wrap; }
+  .week-block-title { font-size: 13px; font-weight: 500; }
+  .week-pct { font-size: 12px; color: var(--text2); }
+  .week-badge { font-size: 11px; font-weight: 600; padding: 2px 10px; border-radius: 20px; }
+  .wb-full { background: var(--teal-light); color: var(--teal); }
+  .wb-partial { background: var(--amber-light); color: var(--amber); }
+  .wb-empty { background: var(--bg3); color: var(--text3); }
+  .week-chevron { font-size: 11px; color: var(--text3); transition: transform 0.2s; margin-left: 8px; flex-shrink: 0; }
+  .week-chevron.open { transform: rotate(90deg); }
+  .week-days-grid { display: none; } .week-days-grid.open { display: block; }
+  .day-entry { padding: 10px 14px; border-bottom: 0.5px solid var(--border); }
+  .day-entry:last-child { border-bottom: none; }
+  .day-entry-header { display: flex; align-items: center; gap: 10px; margin-bottom: 4px; }
+  .day-entry-name { font-size: 12px; font-weight: 600; width: 36px; color: var(--text2); flex-shrink: 0; }
+  .task-pip { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+  .pip-done { background: var(--teal); } .pip-miss { background: var(--bg3); border: 1px solid var(--border2); }
+  .day-notes-area { padding-left: 46px; margin-top: 4px; }
+  .day-note-item { font-size: 12px; color: var(--text2); margin-bottom: 2px; line-height: 1.5; }
+  .day-note-item strong { color: var(--text); font-weight: 500; }
+  .day-note-item em { color: var(--text3); font-style: normal; }
+  .activity-tag { display: inline-block; font-size: 11px; padding: 1px 8px; border-radius: 20px; margin: 2px 3px 2px 0; }
+  .activity-tag-hw { background: var(--amber-light); color: var(--amber-dark); }
+  .activity-tag-learn { background: var(--purple-light); color: var(--purple-dark); }
+  .no-data-msg { font-size: 13px; color: var(--text3); padding: 1.5rem; text-align: center; }
 </style>
 </head>
 <body>
 <div class="app">
   <h1>☀️ Summer schedule</h1>
-  <p class="subtitle">Track the week together — all changes sync to Google Sheets.</p>
-
+  <p class="subtitle">Track the week together — changes sync to Google Sheets.</p>
   <div class="tabs">
     <button class="tab active" onclick="showTab('schedule')">Weekly view</button>
     <button class="tab" onclick="showTab('checklist')">Daily checklist</button>
     <button class="tab" onclick="showTab('housework')">Housework</button>
     <button class="tab" onclick="showTab('learning')">Learning</button>
     <button class="tab" onclick="showTab('todo')">Things to do</button>
+    <button class="tab" onclick="showTab('tracker')">Tracker</button>
     <button class="tab" onclick="showTab('setup')">⚙ Setup</button>
   </div>
 
@@ -136,12 +191,12 @@
       <div class="leg"><div class="leg-dot" style="background:var(--coral)"></div>screens (2h max)</div>
     </div>
     <div class="day-grid" id="schedule-grid"></div>
-    <p class="note">Screens on Mon, Wed, Fri only. Pick housework and learning from their tabs each day.</p>
+    <p class="page-note">Screens on Mon, Wed, Fri only. Pick activities from the checklist each day.</p>
   </div>
 
   <!-- DAILY CHECKLIST -->
   <div id="tab-checklist" class="tab-panel">
-    <div class="date-banner" id="date-banner">
+    <div class="date-banner">
       <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="1" y="2" width="12" height="11" rx="2" stroke="currentColor" stroke-width="1.2"/><path d="M1 5h12" stroke="currentColor" stroke-width="1.2"/><path d="M4 1v2M10 1v2" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
       <span id="date-display"></span>
     </div>
@@ -154,7 +209,7 @@
 
   <!-- HOUSEWORK -->
   <div id="tab-housework" class="tab-panel">
-    <p class="section-desc">Pick one each day for the housework block. Anyone can add options.</p>
+    <p class="section-desc">Options available as chips in the daily checklist. Anyone can add.</p>
     <div class="add-row">
       <input type="text" id="hw-input" placeholder="Add a housework option..." />
       <input type="text" id="hw-note" placeholder="Note (e.g. extra $)" style="max-width:140px;" />
@@ -166,7 +221,7 @@
 
   <!-- LEARNING -->
   <div id="tab-learning" class="tab-panel">
-    <p class="section-desc">Pick one each day for the learning block. Anyone can add options.</p>
+    <p class="section-desc">Options available as chips in the daily checklist. Anyone can add.</p>
     <div class="add-row">
       <input type="text" id="learn-input" placeholder="Add a learning option..." />
       <button class="btn btn-primary" onclick="addLearning()">+ Add</button>
@@ -186,33 +241,45 @@
     <div class="card" id="todo-list"></div>
   </div>
 
+  <!-- TRACKER -->
+  <div id="tab-tracker" class="tab-panel">
+    <div class="pct-chart-card">
+      <div class="pct-chart-title">% completed per week</div>
+      <div class="pct-chart" id="pct-chart"><div class="pct-no-data">No data yet</div></div>
+    </div>
+    <div id="reward-area"></div>
+    <div class="tally-grid" id="tally-grid"></div>
+    <div class="tracker-section-title">Summer log</div>
+    <div class="status" id="tracker-status"></div>
+    <div id="tracker-log"></div>
+  </div>
+
   <!-- SETUP -->
   <div id="tab-setup" class="tab-panel">
     <div class="setup-box">
       <h3>Google Sheets setup</h3>
       <ol>
         <li>Open your Google Sheet</li>
-        <li>Create <strong>5 sheets</strong> (tabs) named exactly: <code>CheckState</code>, <code>Housework</code>, <code>Learning</code>, <code>Todos</code>, <code>Stock</code></li>
-        <li>In <strong>Housework</strong> — row 1: <code>id</code> | <code>label</code> | <code>note</code></li>
-        <li>In <strong>Learning</strong> — row 1: <code>id</code> | <code>label</code></li>
-        <li>In <strong>Todos</strong> — row 1: <code>id</code> | <code>text</code> | <code>category</code> | <code>checked</code></li>
-        <li>In <strong>CheckState</strong> — row 1: <code>key</code> | <code>checked</code> | <code>notes</code> | <code>date</code></li>
-        <li>In <strong>Stock</strong> — row 1: <code>id</code> | <code>item</code> | <code>done</code></li>
-        <li>Go to <strong>Extensions → Apps Script</strong>, paste the script below, save and deploy as web app (anyone, no sign-in required)</li>
+        <li>Create <strong>5 sheets</strong> named exactly: <code>CheckState</code>, <code>Housework</code>, <code>Learning</code>, <code>Todos</code>, <code>Stock</code></li>
+        <li><strong>Housework</strong> row 1: <code>id</code> | <code>label</code> | <code>note</code></li>
+        <li><strong>Learning</strong> row 1: <code>id</code> | <code>label</code></li>
+        <li><strong>Todos</strong> row 1: <code>id</code> | <code>text</code> | <code>category</code> | <code>checked</code></li>
+        <li><strong>CheckState</strong> row 1: <code>key</code> | <code>checked</code> | <code>selection</code> | <code>date</code></li>
+        <li><strong>Stock</strong> row 1: <code>id</code> | <code>item</code> | <code>done</code></li>
+        <li>Extensions → Apps Script → paste script → deploy as web app (anyone, no sign-in)</li>
       </ol>
-      <hr />
-      <p style="font-size:13px;font-weight:500;margin-bottom:8px;">Apps Script — paste into script editor:</p>
+      <hr/>
+      <p style="font-size:13px;font-weight:500;margin-bottom:8px;">Apps Script:</p>
       <textarea id="script-box" readonly style="width:100%;height:200px;font-size:11px;font-family:monospace;background:var(--bg3);border:0.5px solid var(--border);border-radius:6px;padding:10px;color:var(--text);resize:vertical;"></textarea>
-      <p style="font-size:12px;color:var(--text3);margin-top:6px;">Your Sheet ID is already embedded in the script above.</p>
-      <hr />
-      <p style="font-size:13px;font-weight:500;margin-bottom:6px;">After deploying, paste your Web App URL here:</p>
+      <hr/>
+      <p style="font-size:13px;font-weight:500;margin-bottom:6px;">Web App URL:</p>
       <div class="add-row">
-        <input type="text" id="api-url-input" placeholder="https://script.google.com/macros/s/..." style="font-size:12px;" />
+        <input type="text" id="api-url-input" placeholder="https://script.google.com/macros/s/..." style="font-size:12px;"/>
         <button class="btn btn-primary" onclick="saveApiUrl()">Save</button>
       </div>
       <div class="status" id="setup-status"></div>
       <button class="btn" onclick="seedSheet()" style="margin-top:6px;">Seed sheet with default data</button>
-      <p style="font-size:11px;color:var(--text3);margin-top:6px;">Run once after first deploy to populate all default data.</p>
+      <p style="font-size:11px;color:var(--text3);margin-top:6px;">Run once after first deploy.</p>
     </div>
   </div>
 </div>
@@ -221,86 +288,73 @@
 const SHEET_ID = '1QZz8lWINEQhfvIYAts2GfPcxaLdq9mMoIjSA_OzS_q4';
 const DAYS = ['Mon','Tue','Wed','Thu','Fri'];
 const SCREEN_DAYS = ['Mon','Wed','Fri'];
-
-const DAILY_CHECKS = [
-  { id:'dog',   label:'dog walk',        tag:'daily', hasNotes: false },
-  { id:'work',  label:'housework (1h)',   tag:'daily', hasNotes: true,  notesPlaceholder:'What did you do?' },
-  { id:'learn', label:'learning (1h)',    tag:'daily', hasNotes: true,  notesPlaceholder:'What did you work on?' },
-];
+const TRACKED_TASKS = ['dog','work','learn'];
+const SEP = '||'; // separator for multiple selections stored as string
 
 const DEFAULT_HW = [
-  { id:'hw1', label:'empty the trash',  note:'' },
-  { id:'hw2', label:'rake the lawn',    note:'' },
-  { id:'hw3', label:'weed front lawn',  note:'extra $' },
+  {id:'hw1',label:'empty the trash',note:''},
+  {id:'hw2',label:'rake the lawn',note:''},
+  {id:'hw3',label:'weed front lawn',note:'extra $'},
 ];
 const DEFAULT_LEARN = [
-  { id:'ln1', label:'pre-algebra on Khan (2× per week)' },
-  { id:'ln2', label:'soccer skills (2× per week)' },
-  { id:'ln3', label:'baseball with Jude' },
-  { id:'ln4', label:'vibe-coding' },
+  {id:'ln1',label:'pre-algebra on Khan'},
+  {id:'ln2',label:'soccer skills'},
+  {id:'ln3',label:'baseball with Jude'},
+  {id:'ln4',label:'vibe-coding'},
 ];
 const DEFAULT_TODOS = [
-  { id:'td1', text:'plan a mystery date',                                       category:'planning', checked:'false' },
-  { id:'td2', text:'find activities to do with Seattle friends when they visit', category:'planning', checked:'false' },
-  { id:'td3', text:'build a scavenger hunt',                                    category:'planning', checked:'false' },
-  { id:'td4', text:'vibe code an app',                                          category:'creative', checked:'false' },
-  { id:'td5', text:'design a new game',                                         category:'creative', checked:'false' },
-  { id:'td6', text:'write a story',                                             category:'creative', checked:'false' },
-  { id:'td7', text:'teach the dog a new trick',                                 category:'active',   checked:'false' },
+  {id:'td1',text:'plan a mystery date',category:'planning',checked:'false'},
+  {id:'td2',text:'find activities to do with Seattle friends when they visit',category:'planning',checked:'false'},
+  {id:'td3',text:'build a scavenger hunt',category:'planning',checked:'false'},
+  {id:'td4',text:'vibe code an app',category:'creative',checked:'false'},
+  {id:'td5',text:'design a new game',category:'creative',checked:'false'},
+  {id:'td6',text:'write a story',category:'creative',checked:'false'},
+  {id:'td7',text:'teach the dog a new trick',category:'active',checked:'false'},
 ];
-const CAT_LABELS = { planning:'planning & social', creative:'creative projects', active:'active & outdoor', other:'other ideas' };
+const CAT_LABELS = {planning:'planning & social',creative:'creative projects',active:'active & outdoor',other:'other ideas'};
+const REWARDS = [
+  {weeks:1,tier:'bronze',icon:'🥉',title:'First week done!',desc:"You showed up. That's how it starts."},
+  {weeks:2,tier:'bronze',icon:'💪',title:'Two weeks strong',desc:"Back to back. You're building something."},
+  {weeks:3,tier:'silver',icon:'🥈',title:'Three week streak',desc:'A habit is forming. Keep going.'},
+  {weeks:4,tier:'silver',icon:'⚡',title:'One full month!',desc:"Four weeks. That's a real streak."},
+  {weeks:6,tier:'gold',  icon:'🥇',title:'Six weeks — gold tier',desc:"You've earned it. This is impressive."},
+  {weeks:8,tier:'legend',icon:'🌟',title:'Eight weeks — legendary',desc:'An entire summer of showing up every single week.'},
+];
 
-let API_URL = localStorage.getItem('summer_api_url') || '';
-let selectedDay = (function() {
-  const d = new Date().getDay();
-  if (d === 0 || d === 6) return 'Mon';
-  return DAYS[d - 1];
-})();
-let checkState = {};
-let noteState = {};
-let hwItems = []; let learnItems = []; let todos = [];
+let API_URL = localStorage.getItem('summer_api_url')||'';
+let selectedDay = (()=>{ const d=new Date().getDay(); return (d===0||d===6)?'Mon':DAYS[d-1]; })();
+// checkState[key] = 'true'/'false'
+// selectionState[key] = comma-joined string of selected labels e.g. "rake the lawn||weed front lawn"
+let checkState={}; let selectionState={};
+let hwItems=[]; let learnItems=[]; let todos=[];
 
-function todayStr() {
-  return new Date().toLocaleDateString('en-US', { weekday:'long', month:'long', day:'numeric', year:'numeric' });
-}
-function nowISO() { return new Date().toISOString(); }
+function todayStr(){ return new Date().toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric',year:'numeric'}); }
+function nowISO(){ return new Date().toISOString(); }
+function checkSVG(){ return '<svg class="check-svg" width="11" height="9" viewBox="0 0 11 9" fill="none"><path d="M1 4L4 7.5L10 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>'; }
+function setStatus(id,msg,type){ const el=document.getElementById(id); if(!el)return; el.className='status'+(type?' '+type:''); el.innerHTML=msg; }
+function spin(id){ setStatus(id,'<span class="spinner"></span> loading…'); }
+async function apiFetch(sheet){ if(!API_URL)return null; try{ const r=await fetch(API_URL+'?sheet='+sheet); return await r.json(); }catch(e){return null;} }
+async function apiPost(payload){ if(!API_URL)return false; try{ await fetch(API_URL,{method:'POST',body:JSON.stringify(payload)}); return true; }catch(e){return false;} }
 
-function checkSVG() {
-  return '<svg class="check-svg" width="11" height="9" viewBox="0 0 11 9" fill="none"><path d="M1 4L4 7.5L10 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>';
-}
-function setStatus(id, msg, type) {
-  const el = document.getElementById(id); if (!el) return;
-  el.className = 'status' + (type ? ' '+type : '');
-  el.innerHTML = msg;
-}
-function spin(id) { setStatus(id, '<span class="spinner"></span> syncing…'); }
-async function apiFetch(sheet) {
-  if (!API_URL) return null;
-  try { const r = await fetch(API_URL + '?sheet=' + sheet); return await r.json(); } catch(e) { return null; }
-}
-async function apiPost(payload) {
-  if (!API_URL) return false;
-  try { await fetch(API_URL, { method:'POST', body: JSON.stringify(payload) }); return true; } catch(e) { return false; }
-}
+function getSelections(key){ const s=selectionState[key]; return s?s.split(SEP).filter(Boolean):[]; }
+function setSelections(key,arr){ selectionState[key]=arr.join(SEP); }
 
 // ---- Schedule ----
-function buildSchedule() {
-  const grid = document.getElementById('schedule-grid'); grid.innerHTML = '';
-  DAYS.forEach(day => {
-    const col = document.createElement('div'); col.className = 'day-col';
-    const hd = document.createElement('div'); hd.className = 'day-head'; hd.textContent = day;
-    col.appendChild(hd);
-    [
-      { type:'anchor',  label:'dog walk',    detail:'30 minutes' },
-      { type:'work',    label:'housework',   detail:'pick from list (1h)' },
-      { type:'learn',   label:'learning',    detail:'pick from list (1h)' },
-      { type: SCREEN_DAYS.includes(day) ? 'screen' : 'noscreen',
-        label: SCREEN_DAYS.includes(day) ? 'screens' : 'no screens',
-        detail: SCREEN_DAYS.includes(day) ? '2h max' : 'screen-free day' },
-    ].forEach(b => {
-      const blk = document.createElement('div'); blk.className = 'blk b-'+b.type;
-      const lbl = document.createElement('div'); lbl.className = 'blk-lbl'; lbl.textContent = b.label;
-      const det = document.createElement('div'); det.textContent = b.detail;
+function buildSchedule(){
+  const grid=document.getElementById('schedule-grid'); grid.innerHTML='';
+  DAYS.forEach(day=>{
+    const col=document.createElement('div'); col.className='day-col';
+    const hd=document.createElement('div'); hd.className='day-head'; hd.textContent=day; col.appendChild(hd);
+    [{type:'anchor',label:'dog walk',detail:'30 minutes'},
+     {type:'work',label:'housework',detail:'pick activities (1h)'},
+     {type:'learn',label:'learning',detail:'pick activities (1h)'},
+     {type:SCREEN_DAYS.includes(day)?'screen':'noscreen',
+      label:SCREEN_DAYS.includes(day)?'screens':'no screens',
+      detail:SCREEN_DAYS.includes(day)?'2h max':'screen-free day'}
+    ].forEach(b=>{
+      const blk=document.createElement('div'); blk.className='blk b-'+b.type;
+      const lbl=document.createElement('div'); lbl.className='blk-lbl'; lbl.textContent=b.label;
+      const det=document.createElement('div'); det.textContent=b.detail;
       blk.appendChild(lbl); blk.appendChild(det); col.appendChild(blk);
     });
     grid.appendChild(col);
@@ -308,323 +362,489 @@ function buildSchedule() {
 }
 
 // ---- Checklist ----
-function updateDateBanner() {
-  document.getElementById('date-display').textContent = todayStr();
-}
-
-function buildDaySel() {
-  const sel = document.getElementById('day-sel'); sel.innerHTML = '';
-  DAYS.forEach(d => {
-    const btn = document.createElement('button');
-    btn.className = 'day-btn' + (d === selectedDay ? ' sel' : '');
-    btn.textContent = d;
-    btn.onclick = () => { selectedDay = d; buildDaySel(); renderChecklist(); };
+function buildDaySel(){
+  const sel=document.getElementById('day-sel'); sel.innerHTML='';
+  DAYS.forEach(d=>{
+    const btn=document.createElement('button'); btn.className='day-btn'+(d===selectedDay?' sel':''); btn.textContent=d;
+    btn.onclick=()=>{ selectedDay=d; buildDaySel(); renderChecklist(); };
     sel.appendChild(btn);
   });
 }
 
-function renderChecklist() {
-  const list = document.getElementById('check-list'); list.innerHTML = '';
-  let done = 0; const total = DAILY_CHECKS.length;
+function renderChecklist(){
+  const list=document.getElementById('check-list'); list.innerHTML='';
+  const tasks=[
+    {id:'dog',  label:'dog walk',      hasPicker:false},
+    {id:'work', label:'housework (1h)', hasPicker:true, items:hwItems,    chipClass:'selected-hw'},
+    {id:'learn',label:'learning (1h)',  hasPicker:true, items:learnItems, chipClass:'selected-learn'},
+  ];
+  let done=0; const total=tasks.length;
 
-  DAILY_CHECKS.forEach(t => {
-    const key = selectedDay + '_' + t.id;
-    const checked = checkState[key] === 'true' || checkState[key] === true;
-    const savedNote = noteState[key] || '';
-    if (checked) done++;
+  tasks.forEach(t=>{
+    const key=selectedDay+'_'+t.id;
+    const checked=checkState[key]==='true'||checkState[key]===true;
+    const currentSels=getSelections(key);
+    if(checked) done++;
 
-    const outer = document.createElement('div'); outer.className = 'c-row'; outer.style.flexDirection = 'column';
+    const outer=document.createElement('div'); outer.className='c-row'; outer.style.flexDirection='column';
 
-    const top = document.createElement('div'); top.className = 'c-row-top'; top.style.width = '100%';
-    top.onclick = () => toggleCheck(key, !checked);
-
-    const box = document.createElement('div'); box.className = 'c-box' + (checked ? ' on' : '');
-    box.innerHTML = checkSVG();
-    const lbl = document.createElement('div'); lbl.className = 'c-lbl' + (checked ? ' done' : ''); lbl.textContent = t.label;
-    const tag = document.createElement('span'); tag.className = 'c-tag tag-daily'; tag.textContent = t.tag;
+    const top=document.createElement('div'); top.className='c-row-top'; top.style.width='100%';
+    top.onclick=()=>toggleCheck(key,!checked);
+    const box=document.createElement('div'); box.className='c-box'+(checked?' on':''); box.innerHTML=checkSVG();
+    const lbl=document.createElement('div'); lbl.className='c-lbl'+(checked?' done':''); lbl.textContent=t.label;
+    const tag=document.createElement('span'); tag.className='c-tag tag-daily'; tag.textContent='daily';
     top.appendChild(box); top.appendChild(lbl); top.appendChild(tag);
     outer.appendChild(top);
 
-    if (t.hasNotes) {
-      const notesWrap = document.createElement('div'); notesWrap.className = 'c-notes';
-      const ta = document.createElement('textarea');
-      ta.placeholder = t.notesPlaceholder;
-      ta.value = savedNote;
-      ta.rows = 2;
-      ta.onclick = e => e.stopPropagation();
+    if(t.hasPicker && t.items && t.items.length){
+      const picker=document.createElement('div'); picker.className='activity-picker';
+      const plbl=document.createElement('div'); plbl.className='activity-picker-label'; plbl.textContent='What did you do?';
+      const chips=document.createElement('div'); chips.className='activity-chips';
 
-      const saveRow = document.createElement('div'); saveRow.className = 'c-notes-save';
-      const hint = document.createElement('span'); hint.className = 'save-hint'; hint.id = 'hint-'+key;
-      const saveBtn = document.createElement('button'); saveBtn.className = 'btn btn-sm btn-primary';
-      saveBtn.textContent = 'Save note';
-      saveBtn.onclick = e => { e.stopPropagation(); saveNote(key, ta.value); };
-      saveRow.appendChild(hint); saveRow.appendChild(saveBtn);
-      notesWrap.appendChild(ta); notesWrap.appendChild(saveRow);
-      outer.appendChild(notesWrap);
+      t.items.forEach(item=>{
+        const chip=document.createElement('div');
+        const isSelected=currentSels.includes(item.label);
+        chip.className='chip'+(isSelected?' '+t.chipClass:'');
+        chip.textContent=item.label;
+        chip.onclick=e=>{
+          e.stopPropagation();
+          const sels=getSelections(key);
+          const idx=sels.indexOf(item.label);
+          if(idx>-1) sels.splice(idx,1); else sels.push(item.label);
+          setSelections(key,sels);
+          saveSelection(key);
+          renderChecklist();
+        };
+        chips.appendChild(chip);
+      });
+
+      const saveRow=document.createElement('div'); saveRow.className='activity-save-row';
+      const hint=document.createElement('span'); hint.className='save-hint'; hint.id='hint-'+key;
+      if(currentSels.length){ hint.textContent=currentSels.length+' selected'; hint.style.color='var(--teal)'; }
+      saveRow.appendChild(hint);
+
+      picker.appendChild(plbl); picker.appendChild(chips); picker.appendChild(saveRow);
+      outer.appendChild(picker);
     }
 
     list.appendChild(outer);
   });
 
-  document.getElementById('prog-lbl').textContent = done + ' of ' + total + ' complete';
-  document.getElementById('prog-fill').style.width = (total ? Math.round(done/total*100) : 0) + '%';
+  document.getElementById('prog-lbl').textContent=done+' of '+total+' complete';
+  document.getElementById('prog-fill').style.width=(total?Math.round(done/total*100):0)+'%';
 }
 
-async function toggleCheck(key, newVal) {
-  checkState[key] = String(newVal); renderChecklist();
+async function toggleCheck(key,newVal){
+  checkState[key]=String(newVal); renderChecklist(); spin('check-status');
+  const ok=await apiPost({sheet:'CheckState',action:'upsert',keyField:'key',
+    row:{key,checked:String(newVal),selection:selectionState[key]||'',date:nowISO()}});
+  setStatus('check-status',ok?'✓ saved':API_URL?'⚠ could not sync':'',ok?'ok':'err');
+  setTimeout(()=>setStatus('check-status',''),2000);
+}
+
+async function saveSelection(key){
+  const ok=await apiPost({sheet:'CheckState',action:'upsert',keyField:'key',
+    row:{key,checked:checkState[key]||'false',selection:selectionState[key]||'',date:nowISO()}});
+  // hint updated via renderChecklist
+  if(!ok && API_URL){ setStatus('check-status','⚠ could not sync selection','err'); setTimeout(()=>setStatus('check-status',''),2000); }
+}
+
+async function loadChecklist(){
+  if(!API_URL){ renderChecklist(); return; }
   spin('check-status');
-  const ok = await apiPost({
-    sheet:'CheckState', action:'upsert', keyField:'key',
-    row:{ key, checked:String(newVal), notes: noteState[key]||'', date: nowISO() }
-  });
-  setStatus('check-status', ok ? '✓ saved' : API_URL ? '⚠ could not sync' : '', ok ? 'ok' : 'err');
-  setTimeout(() => setStatus('check-status',''), 2000);
-}
-
-async function saveNote(key, text) {
-  noteState[key] = text;
-  const hint = document.getElementById('hint-'+key);
-  if (hint) { hint.textContent = 'saving…'; }
-  const ok = await apiPost({
-    sheet:'CheckState', action:'upsert', keyField:'key',
-    row:{ key, checked: checkState[key]||'false', notes: text, date: nowISO() }
-  });
-  if (hint) { hint.textContent = ok ? '✓ saved' : API_URL ? '⚠ error' : ''; }
-  setTimeout(() => { if (hint) hint.textContent = ''; }, 2000);
-}
-
-async function loadChecklist() {
-  if (!API_URL) { renderChecklist(); return; }
-  spin('check-status');
-  const cs = await apiFetch('CheckState');
-  if (cs) cs.forEach(r => {
-    checkState[r.key] = r.checked;
-    if (r.notes) noteState[r.key] = r.notes;
-  });
+  const cs=await apiFetch('CheckState');
+  if(cs) cs.forEach(r=>{ checkState[r.key]=r.checked; if(r.selection) selectionState[r.key]=r.selection; });
   setStatus('check-status',''); renderChecklist();
 }
 
 // ---- Housework ----
-function renderHousework() {
-  const list = document.getElementById('hw-list'); list.innerHTML = '';
-  if (!hwItems.length) { list.innerHTML = '<div class="empty">No options yet.</div>'; return; }
-  hwItems.forEach(item => {
-    const row = document.createElement('div'); row.className = 'c-row'; row.style.cursor='default'; row.style.flexDirection='row'; row.style.alignItems='center';
-    const lbl = document.createElement('div'); lbl.className = 'c-lbl'; lbl.textContent = item.label;
-    row.appendChild(lbl);
-    if (item.note) { const b = document.createElement('span'); b.className = 'extra-badge'; b.textContent = item.note; row.appendChild(b); }
-    const del = document.createElement('span'); del.className = 'trash'; del.textContent = '✕';
-    del.onclick = () => deleteHousework(item.id);
-    row.appendChild(del); list.appendChild(row);
+function renderHousework(){
+  const list=document.getElementById('hw-list'); list.innerHTML='';
+  if(!hwItems.length){ list.innerHTML='<div class="empty">No options yet.</div>'; return; }
+  hwItems.forEach(item=>{
+    const row=document.createElement('div'); row.className='c-row'; row.style.cssText='cursor:default;flex-direction:row;align-items:center;';
+    const lbl=document.createElement('div'); lbl.className='c-lbl'; lbl.textContent=item.label; row.appendChild(lbl);
+    if(item.note){ const b=document.createElement('span'); b.className='extra-badge'; b.textContent=item.note; row.appendChild(b); }
+    const del=document.createElement('span'); del.className='trash'; del.textContent='✕'; del.onclick=()=>deleteHousework(item.id); row.appendChild(del);
+    list.appendChild(row);
   });
 }
-
-async function addHousework() {
-  const inp = document.getElementById('hw-input'); const note = document.getElementById('hw-note');
-  const val = inp.value.trim(); if (!val) return;
-  const id = 'hw_' + Date.now();
-  const item = { id, label:val, note:note.value.trim() };
-  hwItems.push(item); inp.value=''; note.value=''; renderHousework();
-  spin('hw-status');
-  const ok = await apiPost({ sheet:'Housework', action:'append', row:item });
-  setStatus('hw-status', ok?'✓ saved':API_URL?'⚠ could not sync':'', ok?'ok':'err');
+async function addHousework(){
+  const inp=document.getElementById('hw-input'); const note=document.getElementById('hw-note'); const val=inp.value.trim(); if(!val)return;
+  const id='hw_'+Date.now(); const item={id,label:val,note:note.value.trim()};
+  hwItems.push(item); inp.value=''; note.value=''; renderHousework(); spin('hw-status');
+  const ok=await apiPost({sheet:'Housework',action:'append',row:item});
+  setStatus('hw-status',ok?'✓ saved':API_URL?'⚠ could not sync':'',ok?'ok':'err');
   setTimeout(()=>setStatus('hw-status',''),2000);
 }
-
-async function deleteHousework(id) {
-  hwItems = hwItems.filter(x=>x.id!==id); renderHousework();
-  if (API_URL) await apiPost({ sheet:'Housework', action:'delete', keyField:'id', keyValue:id });
-}
-
-async function loadHousework() {
-  if (!API_URL) { hwItems = DEFAULT_HW.map(x=>({...x})); renderHousework(); return; }
-  spin('hw-status');
-  const data = await apiFetch('Housework');
-  hwItems = (data&&data.length) ? data : DEFAULT_HW.map(x=>({...x}));
-  setStatus('hw-status',''); renderHousework();
+async function deleteHousework(id){ hwItems=hwItems.filter(x=>x.id!==id); renderHousework(); if(API_URL) await apiPost({sheet:'Housework',action:'delete',keyField:'id',keyValue:id}); }
+async function loadHousework(){
+  if(!API_URL){ hwItems=DEFAULT_HW.map(x=>({...x})); renderHousework(); return; }
+  spin('hw-status'); const data=await apiFetch('Housework');
+  hwItems=(data&&data.length)?data:DEFAULT_HW.map(x=>({...x})); setStatus('hw-status',''); renderHousework();
 }
 
 // ---- Learning ----
-function renderLearning() {
-  const list = document.getElementById('learn-list'); list.innerHTML = '';
-  if (!learnItems.length) { list.innerHTML = '<div class="empty">No options yet.</div>'; return; }
-  learnItems.forEach(item => {
-    const row = document.createElement('div'); row.className = 'c-row'; row.style.cursor='default'; row.style.flexDirection='row'; row.style.alignItems='center';
-    const lbl = document.createElement('div'); lbl.className = 'c-lbl'; lbl.textContent = item.label;
-    const del = document.createElement('span'); del.className = 'trash'; del.textContent = '✕';
-    del.onclick = () => deleteLearning(item.id);
+function renderLearning(){
+  const list=document.getElementById('learn-list'); list.innerHTML='';
+  if(!learnItems.length){ list.innerHTML='<div class="empty">No options yet.</div>'; return; }
+  learnItems.forEach(item=>{
+    const row=document.createElement('div'); row.className='c-row'; row.style.cssText='cursor:default;flex-direction:row;align-items:center;';
+    const lbl=document.createElement('div'); lbl.className='c-lbl'; lbl.textContent=item.label;
+    const del=document.createElement('span'); del.className='trash'; del.textContent='✕'; del.onclick=()=>deleteLearning(item.id);
     row.appendChild(lbl); row.appendChild(del); list.appendChild(row);
   });
 }
-
-async function addLearning() {
-  const inp = document.getElementById('learn-input'); const val = inp.value.trim(); if (!val) return;
-  const id = 'ln_' + Date.now();
-  const item = { id, label:val };
-  learnItems.push(item); inp.value=''; renderLearning();
-  spin('learn-status');
-  const ok = await apiPost({ sheet:'Learning', action:'append', row:item });
-  setStatus('learn-status', ok?'✓ saved':API_URL?'⚠ could not sync':'', ok?'ok':'err');
+async function addLearning(){
+  const inp=document.getElementById('learn-input'); const val=inp.value.trim(); if(!val)return;
+  const id='ln_'+Date.now(); const item={id,label:val};
+  learnItems.push(item); inp.value=''; renderLearning(); spin('learn-status');
+  const ok=await apiPost({sheet:'Learning',action:'append',row:item});
+  setStatus('learn-status',ok?'✓ saved':API_URL?'⚠ could not sync':'',ok?'ok':'err');
   setTimeout(()=>setStatus('learn-status',''),2000);
 }
-
-async function deleteLearning(id) {
-  learnItems = learnItems.filter(x=>x.id!==id); renderLearning();
-  if (API_URL) await apiPost({ sheet:'Learning', action:'delete', keyField:'id', keyValue:id });
-}
-
-async function loadLearning() {
-  if (!API_URL) { learnItems = DEFAULT_LEARN.map(x=>({...x})); renderLearning(); return; }
-  spin('learn-status');
-  const data = await apiFetch('Learning');
-  learnItems = (data&&data.length) ? data : DEFAULT_LEARN.map(x=>({...x}));
-  setStatus('learn-status',''); renderLearning();
+async function deleteLearning(id){ learnItems=learnItems.filter(x=>x.id!==id); renderLearning(); if(API_URL) await apiPost({sheet:'Learning',action:'delete',keyField:'id',keyValue:id}); }
+async function loadLearning(){
+  if(!API_URL){ learnItems=DEFAULT_LEARN.map(x=>({...x})); renderLearning(); return; }
+  spin('learn-status'); const data=await apiFetch('Learning');
+  learnItems=(data&&data.length)?data:DEFAULT_LEARN.map(x=>({...x})); setStatus('learn-status',''); renderLearning();
 }
 
 // ---- Todos ----
-function renderTodos() {
-  const list = document.getElementById('todo-list'); list.innerHTML = '';
-  if (!todos.length) { list.innerHTML = '<div class="empty">No ideas yet.</div>'; return; }
-  const cats = ['planning','creative','active','other'];
-  cats.forEach(cat => {
-    const items = todos.filter(t=>(t.category||'other')===cat);
-    if (!items.length) return;
-    const hd = document.createElement('div'); hd.className='cat-hd'; hd.textContent=CAT_LABELS[cat]||cat;
-    list.appendChild(hd);
-    items.forEach(t => {
-      const checked = t.checked==='true'||t.checked===true;
-      const row = document.createElement('div'); row.className='c-row'; row.style.flexDirection='row'; row.style.alignItems='center';
-      const box = document.createElement('div'); box.className='c-box'+(checked?' on':'');
-      box.innerHTML=checkSVG();
-      box.onclick=e=>{e.stopPropagation();toggleTodo(t.id,!checked);};
-      const lbl = document.createElement('div'); lbl.className='c-lbl'+(checked?' done':''); lbl.textContent=t.text;
-      const del = document.createElement('span'); del.className='trash'; del.textContent='✕';
-      del.onclick=e=>{e.stopPropagation();deleteTodo(t.id);};
-      row.appendChild(box); row.appendChild(lbl); row.appendChild(del);
-      list.appendChild(row);
+function renderTodos(){
+  const list=document.getElementById('todo-list'); list.innerHTML='';
+  if(!todos.length){ list.innerHTML='<div class="empty">No ideas yet.</div>'; return; }
+  const cats=['planning','creative','active','other'];
+  cats.forEach(cat=>{
+    const items=todos.filter(t=>(t.category||'other')===cat); if(!items.length)return;
+    const hd=document.createElement('div'); hd.className='cat-hd'; hd.textContent=CAT_LABELS[cat]||cat; list.appendChild(hd);
+    items.forEach(t=>{
+      const checked=t.checked==='true'||t.checked===true;
+      const row=document.createElement('div'); row.className='c-row'; row.style.cssText='flex-direction:row;align-items:center;';
+      const box=document.createElement('div'); box.className='c-box'+(checked?' on':''); box.innerHTML=checkSVG();
+      box.onclick=e=>{ e.stopPropagation(); toggleTodo(t.id,!checked); };
+      const lbl=document.createElement('div'); lbl.className='c-lbl'+(checked?' done':''); lbl.textContent=t.text;
+      const del=document.createElement('span'); del.className='trash'; del.textContent='✕'; del.onclick=e=>{ e.stopPropagation(); deleteTodo(t.id); };
+      row.appendChild(box); row.appendChild(lbl); row.appendChild(del); list.appendChild(row);
     });
   });
 }
-
-async function toggleTodo(id, newVal) {
-  const t = todos.find(x=>x.id===id); if (!t) return;
-  t.checked=String(newVal); renderTodos();
-  if (API_URL) await apiPost({sheet:'Todos',action:'upsert',keyField:'id',row:{id,text:t.text,category:t.category||'other',checked:String(newVal)}});
+async function toggleTodo(id,newVal){
+  const t=todos.find(x=>x.id===id); if(!t)return; t.checked=String(newVal); renderTodos();
+  if(API_URL) await apiPost({sheet:'Todos',action:'upsert',keyField:'id',row:{id,text:t.text,category:t.category||'other',checked:String(newVal)}});
 }
-
-async function deleteTodo(id) {
-  todos=todos.filter(t=>t.id!==id); renderTodos();
-  if (API_URL) await apiPost({sheet:'Todos',action:'delete',keyField:'id',keyValue:id});
-}
-
-async function addTodo() {
-  const inp=document.getElementById('todo-input'); const val=inp.value.trim(); if (!val) return;
-  const id='td_'+Date.now();
-  const item={id,text:val,category:'other',checked:'false'};
-  todos.push(item); inp.value=''; renderTodos();
-  spin('todo-status');
+async function deleteTodo(id){ todos=todos.filter(t=>t.id!==id); renderTodos(); if(API_URL) await apiPost({sheet:'Todos',action:'delete',keyField:'id',keyValue:id}); }
+async function addTodo(){
+  const inp=document.getElementById('todo-input'); const val=inp.value.trim(); if(!val)return;
+  const id='td_'+Date.now(); const item={id,text:val,category:'other',checked:'false'};
+  todos.push(item); inp.value=''; renderTodos(); spin('todo-status');
   const ok=await apiPost({sheet:'Todos',action:'append',row:item});
   setStatus('todo-status',ok?'✓ saved':API_URL?'⚠ could not sync':'',ok?'ok':'err');
   setTimeout(()=>setStatus('todo-status',''),2000);
 }
-
-document.getElementById('todo-input').addEventListener('keydown',e=>{if(e.key==='Enter')addTodo();});
-document.getElementById('hw-input').addEventListener('keydown',e=>{if(e.key==='Enter')addHousework();});
-document.getElementById('learn-input').addEventListener('keydown',e=>{if(e.key==='Enter')addLearning();});
-
-async function loadTodos() {
-  if (!API_URL) { todos=DEFAULT_TODOS.map(x=>({...x})); renderTodos(); return; }
-  spin('todo-status');
-  const data=await apiFetch('Todos');
-  todos=(data&&data.length)?data:DEFAULT_TODOS.map(x=>({...x}));
-  setStatus('todo-status',''); renderTodos();
+document.getElementById('todo-input').addEventListener('keydown',e=>{ if(e.key==='Enter')addTodo(); });
+document.getElementById('hw-input').addEventListener('keydown',e=>{ if(e.key==='Enter')addHousework(); });
+document.getElementById('learn-input').addEventListener('keydown',e=>{ if(e.key==='Enter')addLearning(); });
+async function loadTodos(){
+  if(!API_URL){ todos=DEFAULT_TODOS.map(x=>({...x})); renderTodos(); return; }
+  spin('todo-status'); const data=await apiFetch('Todos');
+  todos=(data&&data.length)?data:DEFAULT_TODOS.map(x=>({...x})); setStatus('todo-status',''); renderTodos();
 }
 
-// ---- Seed ----
-async function seedSheet() {
-  if (!API_URL){setStatus('setup-status','Paste and save your Web App URL first.','err');return;}
+// ---- TRACKER ----
+function getWeekKey(dateStr){
+  const d=dateStr?new Date(dateStr):new Date();
+  const jan1=new Date(d.getFullYear(),0,1);
+  const week=Math.ceil(((d-jan1)/86400000+jan1.getDay()+1)/7);
+  return d.getFullYear()+'-W'+String(week).padStart(2,'0');
+}
+function getWeekLabel(weekKey){
+  const [year,w]=weekKey.split('-W');
+  const jan1=new Date(Number(year),0,1);
+  const dayOffset=(1-jan1.getDay()+7)%7;
+  const ws=new Date(jan1); ws.setDate(jan1.getDate()+dayOffset+(Number(w)-1)*7);
+  const we=new Date(ws); we.setDate(ws.getDate()+4);
+  const fmt=d=>d.toLocaleDateString('en-US',{month:'short',day:'numeric'});
+  return 'Week of '+fmt(ws)+' – '+fmt(we);
+}
+function buildTrackerData(rawData){
+  const weekMap={};
+  rawData.forEach(r=>{
+    if(!r.date)return;
+    const parts=r.key.split('_'); const day=parts[0]; const task=parts.slice(1).join('_');
+    if(!DAYS.includes(day))return;
+    const wk=getWeekKey(r.date);
+    if(!weekMap[wk])weekMap[wk]={};
+    if(!weekMap[wk][day])weekMap[wk][day]={};
+    weekMap[wk][day][task]=r;
+  });
+  return weekMap;
+}
+function isDayComplete(dd){ return TRACKED_TASKS.every(t=>dd[t]&&(dd[t].checked==='true'||dd[t].checked===true)); }
+function isWeekComplete(wd){ return DAYS.every(day=>wd[day]&&isDayComplete(wd[day])); }
+function weekCompletionPct(wd){
+  let total=0; let done=0;
+  DAYS.forEach(day=>{ TRACKED_TASKS.forEach(task=>{ total++;
+    const dd=wd[day]; if(!dd)return;
+    const r=dd[task]; if(r&&(r.checked==='true'||r.checked===true)) done++;
+  }); });
+  return total>0?Math.round(done/total*100):0;
+}
+function computeStreaks(weekKeys,weekMap){
+  const sorted=[...weekKeys].sort(); let best=0; let run=0;
+  sorted.forEach(wk=>{ if(isWeekComplete(weekMap[wk])){ run++; best=Math.max(best,run); } else run=0; });
+  let current=0;
+  for(const wk of [...sorted].reverse()){ if(isWeekComplete(weekMap[wk])) current++; else break; }
+  return {current,best};
+}
+function buildTallies(rawData){
+  const hw={}; const learn={}; let dogWalks=0;
+  rawData.forEach(r=>{
+    const parts=r.key.split('_'); const task=parts.slice(1).join('_');
+    const checked=r.checked==='true'||r.checked===true; if(!checked)return;
+    if(task==='dog'){ dogWalks++; return; }
+    if(!r.selection)return;
+    const labels=r.selection.split(SEP).filter(Boolean);
+    labels.forEach(label=>{
+      if(task==='work')  hw[label]=(hw[label]||0)+1;
+      if(task==='learn') learn[label]=(learn[label]||0)+1;
+    });
+  });
+  return {hw,learn,dogWalks};
+}
+function getHighestReward(weeks){ let reward=null; for(const r of REWARDS){ if(weeks>=r.weeks) reward=r; } return reward; }
+
+async function loadTracker(){
+  spin('tracker-status');
+  let rawData=[];
+  if(API_URL){ const data=await apiFetch('CheckState'); if(data&&data.length) rawData=data; }
+  else { Object.keys(checkState).forEach(key=>{ rawData.push({key,checked:checkState[key],selection:selectionState[key]||'',date:nowISO()}); }); }
+  setStatus('tracker-status','');
+  if(!rawData.length){
+    document.getElementById('tracker-log').innerHTML='<div class="no-data-msg">No data yet — start checking off days to see progress here.</div>';
+    document.getElementById('tally-grid').innerHTML=''; renderPctChart([],{}); return;
+  }
+  const weekMap=buildTrackerData(rawData); const weekKeys=Object.keys(weekMap).sort();
+  const {current,best}=computeStreaks(weekKeys,weekMap);
+  const tallies=buildTallies(rawData);
+  renderPctChart(weekKeys, weekMap);
+  renderReward(current); renderTallies(tallies); renderLog(weekKeys,weekMap);
+}
+
+function renderPctChart(weekKeys, weekMap){
+  const chart=document.getElementById('pct-chart'); chart.innerHTML='';
+  if(!weekKeys.length){
+    chart.innerHTML='<div class="pct-no-data">No data yet — check off some days to see your progress.</div>';
+    return;
+  }
+  const sorted=[...weekKeys].sort();
+  const pcts=sorted.map(wk=>weekCompletionPct(weekMap[wk]));
+  sorted.forEach((wk,i)=>{
+    const pct=pcts[i];
+    const col=document.createElement('div'); col.className='pct-bar-col';
+    const wrap=document.createElement('div'); wrap.className='pct-bar-wrap';
+    const bar=document.createElement('div'); bar.className='pct-bar';
+    const color=pct===100?'var(--teal)':pct>=60?'var(--amber)':'var(--coral)';
+    bar.style.cssText='height:'+Math.max(pct,3)+'%;background:'+color+';width:100%;';
+    bar.setAttribute('data-tip', getWeekLabel(wk)+': '+pct+'%');
+    wrap.appendChild(bar);
+    const pctLbl=document.createElement('div'); pctLbl.className='pct-bar-pct'; pctLbl.textContent=pct+'%';
+    pctLbl.style.color=color;
+    // short week label e.g. "W23"
+    const wNum=wk.split('-W')[1];
+    const wLbl=document.createElement('div'); wLbl.className='pct-bar-label'; wLbl.textContent='Wk '+wNum;
+    col.appendChild(wrap); col.appendChild(pctLbl); col.appendChild(wLbl);
+    chart.appendChild(col);
+  });
+}
+function renderReward(current){
+  const area=document.getElementById('reward-area'); area.innerHTML='';
+  const reward=getHighestReward(current); if(!reward)return;
+  const banner=document.createElement('div'); banner.className='reward-banner '+reward.tier;
+  banner.innerHTML='<div class="reward-icon">'+reward.icon+'</div><div><div class="reward-title">'+reward.title+'</div><div class="reward-desc">'+reward.desc+'</div></div>';
+  area.appendChild(banner);
+}
+const ACTIVITY_ICONS = {
+  'empty the trash':     '🗑️',
+  'rake the lawn':       '🌿',
+  'weed front lawn':     '🌱🧤',
+  'pre-algebra on khan': '➗',
+  'soccer skills':       '⚽',
+  'baseball with jude':  '🪃🧤',
+  'vibe-coding':         '💻✨',
+};
+function activityIcon(label){
+  return ACTIVITY_ICONS[label.toLowerCase().trim()] || '';
+}
+
+function renderTallies({hw,learn,dogWalks}){
+  const grid=document.getElementById('tally-grid'); grid.innerHTML='';
+
+  // dog walk stat card — full width above the two columns
+  const dogCard=document.createElement('div');
+  dogCard.style.cssText='grid-column:1/-1;background:var(--bg);border:0.5px solid var(--border);border-radius:var(--radius);padding:12px 16px;display:flex;align-items:center;gap:14px;';
+  dogCard.innerHTML='<span style="font-size:28px;line-height:1;">🐕</span>'
+    +'<div style="flex:1;">'
+    +'<div style="font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;color:var(--text3);margin-bottom:2px;">Dog walks</div>'
+    +'<div style="font-size:22px;font-weight:700;color:var(--teal);">'+dogWalks+'</div>'
+    +'</div>'
+    +'<div style="font-size:12px;color:var(--text2);text-align:right;">walk'+(dogWalks!==1?'s':'')+' completed<br>this summer</div>';
+  grid.appendChild(dogCard);
+
+  const makeSection=(title,data,color)=>{
+    const sec=document.createElement('div'); sec.className='tally-section';
+    const hd=document.createElement('div'); hd.className='tally-header'; hd.textContent=title; sec.appendChild(hd);
+    const entries=Object.entries(data).sort((a,b)=>b[1]-a[1]);
+    if(!entries.length){ const e=document.createElement('div'); e.className='tally-empty'; e.textContent='No sessions logged yet.'; sec.appendChild(e); }
+    else {
+      const max=entries[0][1];
+      entries.forEach(([name,count])=>{
+        const row=document.createElement('div'); row.className='tally-row';
+        const nm=document.createElement('div'); nm.className='tally-name'; const ic=activityIcon(name); nm.textContent=(ic?ic+' ':'')+name;
+        const bw=document.createElement('div'); bw.className='tally-bar-wrap';
+        const bf=document.createElement('div'); bf.className='tally-bar'; bf.style.cssText='width:'+Math.round(count/max*100)+'%;background:'+color+';'; bw.appendChild(bf);
+        const ct=document.createElement('div'); ct.className='tally-count'; ct.style.color=color; ct.textContent=count+' session'+(count!==1?'s':'');
+        row.appendChild(nm); row.appendChild(bw); row.appendChild(ct); sec.appendChild(row);
+      });
+    }
+    grid.appendChild(sec);
+  };
+  makeSection('Housework sessions',hw,'var(--amber)');
+  makeSection('Learning sessions',learn,'var(--purple)');
+}
+function renderLog(weekKeys,weekMap){
+  const log=document.getElementById('tracker-log'); log.innerHTML='';
+  if(!weekKeys.length){ log.innerHTML='<div class="no-data-msg">No weeks logged yet.</div>'; return; }
+  [...weekKeys].reverse().forEach(wk=>{
+    const wd=weekMap[wk]; const pct=weekCompletionPct(wd); const complete=isWeekComplete(wd);
+    const daysWithAny=DAYS.filter(d=>wd[d]&&Object.keys(wd[d]).length>0);
+    const block=document.createElement('div'); block.className='week-block';
+    const header=document.createElement('div'); header.className='week-block-header';
+    const left=document.createElement('div'); left.className='week-block-left';
+    const title=document.createElement('div'); title.className='week-block-title'; title.textContent=getWeekLabel(wk);
+    const pctEl=document.createElement('div'); pctEl.className='week-pct'; pctEl.textContent=pct+'% complete';
+    left.appendChild(title); left.appendChild(pctEl);
+    const badge=document.createElement('span');
+    if(complete){ badge.className='week-badge wb-full'; badge.textContent='✓ Full week'; }
+    else if(daysWithAny.length){ badge.className='week-badge wb-partial'; badge.textContent=daysWithAny.length+'/5 days'; }
+    else { badge.className='week-badge wb-empty'; badge.textContent='No data'; }
+    const chev=document.createElement('span'); chev.className='week-chevron'; chev.textContent='▶';
+    header.appendChild(left); header.appendChild(badge); header.appendChild(chev);
+
+    const grid=document.createElement('div'); grid.className='week-days-grid';
+    DAYS.forEach(day=>{
+      const dd=wd[day]||{};
+      const entry=document.createElement('div'); entry.className='day-entry';
+      const dh=document.createElement('div'); dh.className='day-entry-header';
+      const dn=document.createElement('div'); dn.className='day-entry-name'; dn.textContent=day; dh.appendChild(dn);
+      TRACKED_TASKS.forEach(t=>{
+        const r=dd[t]; const done=r&&(r.checked==='true'||r.checked===true);
+        const pip=document.createElement('div'); pip.className='task-pip '+(done?'pip-done':'pip-miss');
+        const nm={dog:'🐕',work:'🧹',learn:'📚'}; pip.title=nm[t]+' '+(done?'✓':'✗'); dh.appendChild(pip);
+      });
+      entry.appendChild(dh);
+
+      const noteSections=[];
+      if(dd['work']&&dd['work'].selection){
+        const labels=dd['work'].selection.split(SEP).filter(Boolean);
+        if(labels.length) noteSections.push({type:'hw',labels});
+      }
+      if(dd['learn']&&dd['learn'].selection){
+        const labels=dd['learn'].selection.split(SEP).filter(Boolean);
+        if(labels.length) noteSections.push({type:'learn',labels});
+      }
+
+      if(noteSections.length){
+        const na=document.createElement('div'); na.className='day-notes-area';
+        noteSections.forEach(ns=>{
+          const ni=document.createElement('div'); ni.className='day-note-item';
+          const sectionLabel=ns.type==='hw'?'housework':'learning';
+          ni.innerHTML='<strong>'+sectionLabel+':</strong> ';
+          ns.labels.forEach(label=>{
+            const tag=document.createElement('span');
+            tag.className='activity-tag '+(ns.type==='hw'?'activity-tag-hw':'activity-tag-learn');
+            const tagIc=activityIcon(label); tag.textContent=(tagIc?tagIc+' ':'')+label; ni.appendChild(tag);
+          });
+          na.appendChild(ni);
+        });
+        entry.appendChild(na);
+      } else if(Object.keys(dd).length===0){
+        const na=document.createElement('div'); na.className='day-notes-area';
+        const ni=document.createElement('div'); ni.className='day-note-item'; ni.innerHTML='<em>no entry</em>'; na.appendChild(ni); entry.appendChild(na);
+      }
+      grid.appendChild(entry);
+    });
+
+    header.onclick=()=>{ grid.classList.toggle('open'); chev.classList.toggle('open'); };
+    block.appendChild(header); block.appendChild(grid); log.appendChild(block);
+  });
+}
+
+// ---- Seed / Setup ----
+async function seedSheet(){
+  if(!API_URL){ setStatus('setup-status','Paste and save your Web App URL first.','err'); return; }
   setStatus('setup-status','<span class="spinner"></span> seeding…');
-  for (const t of DEFAULT_HW)    await apiPost({sheet:'Housework',action:'upsert',keyField:'id',row:t});
-  for (const t of DEFAULT_LEARN) await apiPost({sheet:'Learning', action:'upsert',keyField:'id',row:t});
-  for (const t of DEFAULT_TODOS) await apiPost({sheet:'Todos',    action:'upsert',keyField:'id',row:t});
+  for(const t of DEFAULT_HW)    await apiPost({sheet:'Housework',action:'upsert',keyField:'id',row:t});
+  for(const t of DEFAULT_LEARN) await apiPost({sheet:'Learning', action:'upsert',keyField:'id',row:t});
+  for(const t of DEFAULT_TODOS) await apiPost({sheet:'Todos',    action:'upsert',keyField:'id',row:t});
   setStatus('setup-status','✓ Seeded. Reload the page.','ok');
 }
-
-// ---- Setup ----
-function saveApiUrl() {
-  const val=document.getElementById('api-url-input').value.trim(); if (!val) return;
+function saveApiUrl(){
+  const val=document.getElementById('api-url-input').value.trim(); if(!val)return;
   API_URL=val; localStorage.setItem('summer_api_url',val);
-  setStatus('setup-status','✓ Saved. Click "Seed sheet with default data" if this is your first time.','ok');
+  setStatus('setup-status','✓ Saved. Click "Seed sheet with default data" if first time.','ok');
 }
 
-// ---- Script text ----
-document.getElementById('script-box').value = `function doGet(e) {
+document.getElementById('script-box').value=`function doGet(e) {
   var sheet = SpreadsheetApp.openById('${SHEET_ID}').getSheetByName(e.parameter.sheet);
   if (!sheet) return ContentService.createTextOutput(JSON.stringify([])).setMimeType(ContentService.MimeType.JSON);
-  var data = sheet.getDataRange().getValues();
-  var headers = data[0];
-  var rows = data.slice(1).map(function(row) {
-    var obj = {};
-    headers.forEach(function(h, i) { obj[h] = row[i]; });
-    return obj;
-  });
+  var data = sheet.getDataRange().getValues(); var headers = data[0];
+  var rows = data.slice(1).map(function(row){ var obj={}; headers.forEach(function(h,i){ obj[h]=row[i]; }); return obj; });
   return ContentService.createTextOutput(JSON.stringify(rows)).setMimeType(ContentService.MimeType.JSON);
 }
-
 function doPost(e) {
   var payload = JSON.parse(e.postData.contents);
   var ss = SpreadsheetApp.openById('${SHEET_ID}');
   var sheet = ss.getSheetByName(payload.sheet);
   if (!sheet) return ContentService.createTextOutput(JSON.stringify({ok:false,error:'sheet not found'})).setMimeType(ContentService.MimeType.JSON);
   if (payload.action === 'upsert') {
-    var data = sheet.getDataRange().getValues();
-    var headers = data[0];
-    var keyCol = headers.indexOf(payload.keyField);
-    var found = false;
-    for (var i = 1; i < data.length; i++) {
-      if (String(data[i][keyCol]) === String(payload.row[payload.keyField])) {
-        var rowVals = headers.map(function(h) { return payload.row[h] !== undefined ? payload.row[h] : data[i][headers.indexOf(h)]; });
-        sheet.getRange(i+1, 1, 1, rowVals.length).setValues([rowVals]);
-        found = true; break;
+    var data=sheet.getDataRange().getValues(); var headers=data[0]; var keyCol=headers.indexOf(payload.keyField); var found=false;
+    for(var i=1;i<data.length;i++){
+      if(String(data[i][keyCol])===String(payload.row[payload.keyField])){
+        sheet.getRange(i+1,1,1,headers.length).setValues([headers.map(function(h){ return payload.row[h]!==undefined?payload.row[h]:data[i][headers.indexOf(h)]; })]);
+        found=true; break;
       }
     }
-    if (!found) sheet.appendRow(headers.map(function(h) { return payload.row[h] !== undefined ? payload.row[h] : ''; }));
-  } else if (payload.action === 'delete') {
-    var data = sheet.getDataRange().getValues();
-    var headers = data[0];
-    var keyCol = headers.indexOf(payload.keyField);
-    for (var i = data.length - 1; i >= 1; i--) {
-      if (String(data[i][keyCol]) === String(payload.keyValue)) { sheet.deleteRow(i+1); break; }
-    }
-  } else if (payload.action === 'append') {
-    var headers = sheet.getRange(1, 1, 1, sheet.getLastColumn()).getValues()[0];
-    sheet.appendRow(headers.map(function(h) { return payload.row[h] !== undefined ? payload.row[h] : ''; }));
+    if(!found) sheet.appendRow(headers.map(function(h){ return payload.row[h]!==undefined?payload.row[h]:''; }));
+  } else if(payload.action==='delete'){
+    var data=sheet.getDataRange().getValues(); var headers=data[0]; var keyCol=headers.indexOf(payload.keyField);
+    for(var i=data.length-1;i>=1;i--){ if(String(data[i][keyCol])===String(payload.keyValue)){ sheet.deleteRow(i+1); break; } }
+  } else if(payload.action==='append'){
+    var headers=sheet.getRange(1,1,1,sheet.getLastColumn()).getValues()[0];
+    sheet.appendRow(headers.map(function(h){ return payload.row[h]!==undefined?payload.row[h]:''; }));
   }
   return ContentService.createTextOutput(JSON.stringify({ok:true})).setMimeType(ContentService.MimeType.JSON);
 }`;
 
 // ---- Tabs ----
-function showTab(name) {
+function showTab(name){
   document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));
   document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
   document.getElementById('tab-'+name).classList.add('active');
-  const idx=['schedule','checklist','housework','learning','todo','setup'].indexOf(name);
+  const idx=['schedule','checklist','housework','learning','todo','tracker','setup'].indexOf(name);
   document.querySelectorAll('.tab')[idx].classList.add('active');
-  if (name==='checklist') loadChecklist();
-  if (name==='housework') loadHousework();
-  if (name==='learning')  loadLearning();
-  if (name==='todo')      loadTodos();
+  if(name==='checklist') loadChecklist();
+  if(name==='housework') loadHousework();
+  if(name==='learning')  loadLearning();
+  if(name==='todo')      loadTodos();
+  if(name==='tracker')   loadTracker();
 }
 
 // ---- Init ----
-if (API_URL) document.getElementById('api-url-input').value = API_URL;
-updateDateBanner();
-buildSchedule();
-buildDaySel();
-loadChecklist();
-loadHousework();
-loadLearning();
-loadTodos();
+if(API_URL) document.getElementById('api-url-input').value=API_URL;
+document.getElementById('date-display').textContent=todayStr();
+buildSchedule(); buildDaySel();
+loadChecklist(); loadHousework(); loadLearning(); loadTodos();
 </script>
 </body>
 </html>
